@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+.tituloPagina {
+    height: 69px;
+    width: 100%;
+    background: #EC362D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font: normal bold 37px Roboto;
+    line-height: 43px;
+    
+    color: #FFFFFF;     
+}
+
+.principal {
+    margin: 77px auto;
+    padding: 0 195px;
+}
+
+.seusQuizzes {
+    background: #FAFAFA;
+    border: 1px dashed #D5D5D5;
+    border-radius: 5px;
+
+    height: 181px;
+    margin: 0 auto 77px;
+}
+
+.semQuizz {
+    font: normal 20px Roboto;
+    line-height: 23px;
+    text-align: center;
+
+    color: #B9B9B9;
+
+    width: 250px;
+    height: 107px;
+    margin: 0 auto;
+    padding: 35px 20px;
+}
+
+.criarQuizz {
+    background: #FAFAFA;
+    border: 1px dashed #EC362D;
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 151px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.criarQuizz span {
+    font: normal normal 21px Roboto;
+    
+    line-height: 25px;
+    
+    color: #EC362D;
+}
+
+.tituloTodosQuizzes {
+    font: normal bold 20px Roboto;
+
+    line-height: 23px;
+    margin-bottom: 12px;
+    margin-top: 77px;
+
+    color: #000000;
+}
+
+.todosOsQuizzes {
+    margin-top: 12px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.quizz {
+    width: 340px;
+    height: 181px;
+
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+
+    background-color: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.1%, #000000 100%);
+}
+
+.quizz img {
+    width: 340px;
+    height: 181px;
+    border-radius: 5px;
+}
+
+.tituloQuizz {
+    font: normal 19px Roboto;
+    line-height: 22px;
+
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+@media (max-width: 1110px) {
+   .tituloPagina {
+        width: 100%;
+    }
+
+    .principal {
+        padding: 3%;
+        margin-top: 20px;
+    }
+
+    .seusQuizzes {
+        margin-bottom: 35px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .semQuizz {
+        margin: 0;
+        padding-top: 10px;
+    }
+
+    .criarQuizz {
+        width: 151px;
+        height: 40px;
+        margin: 0;
+    }
+
+    .tituloTodosQuizzes {
+        font-size: 20px;
+    }
+
+    .todosOsQuizzes {
+        margin-top: 8px;
+    }
+
+    .quizz {
+        width: 100%;
+    }
+
+    .quizz img {
+        width: 100%;
+    }
+}
