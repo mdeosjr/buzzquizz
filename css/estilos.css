@@ -180,22 +180,25 @@ h1 {
     color: #FFFFFF;
 }
 
-.respostas {
+.respostas-0, .respostas-1, .respostas-2, .respostas-3, .respostas-4, .respostas-5 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 18px;
 }
 
-.respostas img {
-    width: 330px;
-    height: 175px;
-    padding: 10px;
+.resposta img {
+    width: 320px;
+    height: 174px;
+    padding: 10px 0;
 }
 
 .resposta {
     display: flex;
     flex-direction: column;
+
+    justify-content: space-between;
+    padding-bottom: 18px;
 }
 
 .resposta span {

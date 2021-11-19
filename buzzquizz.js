@@ -14,7 +14,7 @@ function listarQuizzes(info) {
         let quizzUnico = quizzes[i]
         todosOsQuizzes.innerHTML += 
             `
-            <div class="quizz" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.1%, #000000 100%), url(${quizzUnico.image})" onclick="quizzIndividual()">
+            <div class="quizz" data-identifier="quizz-card" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.1%, #000000 100%), url(${quizzUnico.image})" onclick="quizzIndividual()">
                 <span class="tituloQuizz">
                     ${quizzUnico.title}
                 </span>
@@ -28,6 +28,10 @@ receberQuizzes();
 function quizzIndividual () {
     const quizz = document.querySelector(".quizzIndividual")
     quizz.classList.toggle("escondido")
+}
+
+function comparador () {
+    return Math.random() - 0.5;
 }
 
 function receberQuizzUnico () {
@@ -49,24 +53,26 @@ function receberQuizzUnico () {
         for (let i = 0; i < quizzIndividual.length; i++) {
             perguntas.innerHTML +=
             `
-            <div class="pergunta">
+            <div class="pergunta" data-identifier="question">
                 <div class="tituloPergunta" style="background-color: ${quizzIndividual[i].color}">
                     <span class="enunciado">${quizzIndividual[i].title}</span>
                 </div>
-                <div class="respostas">
+                <div class="respostas-${i}">
                 </div>
             </div>
             `
+            const respostas = document.querySelector(`.respostas-${i}`)
+            const embaralharRespostas = quizzIndividual[i].answers
+            embaralharRespostas.sort(comparador)
             for (let j = 0; j < quizzIndividual[i].answers.length; j++) {
-                const respostas = document.querySelector(".respostas")
                 respostas.innerHTML += 
                 `
-                <div class="resposta">
+                <div class="resposta" data-identifier="answer" onclick="">
                     <img src="${quizzIndividual[i].answers[j].image}">
                     <span class="tituloResposta">${quizzIndividual[i].answers[j].text}</span>
                 </div>
                 `   
-            }
+            } 
         }
     } )
     quizz.catch(() => alert("ERRO2!"))
