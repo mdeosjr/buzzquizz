@@ -14,8 +14,7 @@ function listarQuizzes(info) {
         let quizzUnico = quizzes[i]
         todosOsQuizzes.innerHTML += 
             `
-            <div class="quizz" onclick="quizzIndividual()">
-                <img src="${quizzUnico.image}"/>
+            <div class="quizz" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.1%, #000000 100%), url(${quizzUnico.image})" onclick="quizzIndividual()">
                 <span class="tituloQuizz">
                     ${quizzUnico.title}
                 </span>
@@ -32,36 +31,45 @@ function quizzIndividual () {
 }
 
 function receberQuizzUnico () {
-    const quizz = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/1")
+    const quizz = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/1`)
 
-    quizz.then(perguntasRespostas)
+    quizz.then((infoQuizz) => {
+        const quizz = infoQuizz.data
+        const quizzIndividual = quizz.questions
+        const paginaQuizz = document.querySelector(".banner")
+        const perguntas = document.querySelector(".perguntas")
+
+        paginaQuizz.innerHTML = 
+        `
+        <div class="bannerQuizz" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url(${quizz.image})">
+            <span class="tituloQuizz">${quizz.title}</span>
+        </div>
+        `
+
+        for (let i = 0; i < quizzIndividual.length; i++) {
+            perguntas.innerHTML +=
+            `
+            <div class="pergunta">
+                <div class="tituloPergunta" style="background-color: ${quizzIndividual[i].color}">
+                    <span class="enunciado">${quizzIndividual[i].title}</span>
+                </div>
+                <div class="respostas">
+                </div>
+            </div>
+            `
+            for (let j = 0; j < quizzIndividual[i].answers.length; j++) {
+                const respostas = document.querySelector(".respostas")
+                respostas.innerHTML += 
+                `
+                <div class="resposta">
+                    <img src="${quizzIndividual[i].answers[j].image}">
+                    <span class="tituloResposta">${quizzIndividual[i].answers[j].text}</span>
+                </div>
+                `   
+            }
+        }
+    } )
     quizz.catch(() => alert("ERRO2!"))
-}
-
-function perguntasRespostas (info) {
-    const quizz = info.data;
-    console.log(quizz.title)
-    const perguntas = document.querySelector(".quizzIndividual")
-
-    for (let i = 0; i < quizz.length; i++) {
-        perguntas.innerHTML = 
-        `
-        <div class="topoQuizz">
-            <img src="${quizz.image}"/>                   
-            <span class="tituloQuizzIndividual">
-                ${quizz.title}
-            </span>
-        </div>
-        <div class="pergunta">
-            <div class="tituloPergunta">
-            </div>
-            <div class="respostas">
-                <img src="">
-                <span class="tituloResposta"></span>
-            </div>
-        </div>
-        `
-    }
 }
 
 receberQuizzUnico();
