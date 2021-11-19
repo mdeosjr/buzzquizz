@@ -4,6 +4,7 @@
 
 .container {
     position: relative;
+    background-color: #E5E5E5;
 }
 
 /* LISTAGEM DE QUIZZES */
@@ -26,15 +27,14 @@
 h1 {
     font: normal bold 37px Roboto;
     line-height: 43px;
-    
-    color: #FFFFFF;     
+
+    color: #FFFFFF;
 }
 
 .principal {
     margin: 77px auto;
     padding: 77px 195px;
     position: absolute;
-    background-color: #FAFAFA;
 }
 
 .seusQuizzes {
@@ -75,9 +75,9 @@ h1 {
 
 .criarQuizz span {
     font: normal normal 21px Roboto;
-    
+
     line-height: 25px;
-    
+
     color: #EC362D;
 }
 
@@ -115,7 +115,7 @@ span.listaDeQuizzes {
     display: flex;
     align-items: flex-end;
     position: relative;
-    
+
     cursor: pointer;
 
     background-size: cover;
@@ -135,7 +135,6 @@ span.listaDeQuizzes {
     position: absolute;
     z-index: 1;
     width: 100%;
-
     background-color: #E5E5E5;
 }
 
@@ -150,7 +149,7 @@ span.listaDeQuizzes {
     height: 227px;
     background-size: cover;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
     align-items: center;
 }
 
@@ -192,13 +191,18 @@ span.listaDeQuizzes {
 
 .enunciado {
     font: normal bold 23px Roboto;
-    
+
     line-height: 27px;
 
     color: #FFFFFF;
 }
 
-.respostas-0, .respostas-1, .respostas-2, .respostas-3, .respostas-4, .respostas-5 {
+.respostas-0,
+.respostas-1,
+.respostas-2,
+.respostas-3,
+.respostas-4,
+.respostas-5 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -233,7 +237,7 @@ span.listaDeQuizzes {
 }
 
 @media (max-width: 1110px) {
-   .tituloPagina {
+    .tituloPagina {
         width: 100%;
     }
 
