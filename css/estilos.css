@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+.container {
+    position: relative;
+}
+
 /* LISTAGEM DE QUIZZES */
 
 .tituloPagina {
@@ -16,6 +20,7 @@
 
     position: fixed;
     top: 0;
+    z-index: 999;
 }
 
 h1 {
@@ -27,8 +32,8 @@ h1 {
 
 .principal {
     margin: 77px auto;
-    padding: 0 195px;
-    position: relative;
+    padding: 77px 195px;
+    position: absolute;
     background-color: #FAFAFA;
 }
 
@@ -86,6 +91,12 @@ h1 {
     color: #000000;
 }
 
+span.listaDeQuizzes {
+    font: normal 19px Roboto;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
 .todosOsQuizzes {
     margin-top: 12px;
 
@@ -99,6 +110,7 @@ h1 {
     width: 340px;
     height: 181px;
     border-radius: 5px;
+    padding: 17px;
 
     display: flex;
     align-items: flex-end;
@@ -117,9 +129,15 @@ h1 {
     z-index: 0;
 }
 
-
-
 /*  QUIZZ INDIVIDUAL */
+
+.quizzIndividual {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+
+    background-color: #E5E5E5;
+}
 
 .banner {
     width: 100%;
@@ -199,6 +217,8 @@ h1 {
 
     justify-content: space-between;
     padding-bottom: 18px;
+
+    cursor: pointer;
 }
 
 .resposta span {

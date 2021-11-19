@@ -1,3 +1,8 @@
+// VARIÁVEIS GLOBAIS //
+let quizzUnico;
+let quizzID;
+
+// RECEBENDO DO SERVIDOR O ARRAY COM TODOS OS QUIZZES //
 function receberQuizzes() {
     const infoQuizzes = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes");
 
@@ -5,37 +10,44 @@ function receberQuizzes() {
     infoQuizzes.catch(() => alert("ERRO!"))
 }
 
+// RENDERIZANDO TODOS OS QUIZZES //
 function listarQuizzes(info) {
     const quizzes = info.data
 
     const todosOsQuizzes = document.querySelector(".todosOsQuizzes")
 
     for (let i = 0; i < quizzes.length; i++) {
-        let quizzUnico = quizzes[i]
+        quizzUnico = quizzes[i]
+        quizzID = quizzes[i].id
         todosOsQuizzes.innerHTML += 
             `
-            <div class="quizz" data-identifier="quizz-card" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.1%, #000000 100%), url(${quizzUnico.image})" onclick="quizzIndividual()">
-                <span class="tituloQuizz">
+            <div class="quizz ${quizzID}" data-identifier="quizz-card" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.1%, #000000 100%), url(${quizzUnico.image})" onclick="quizzIndividual(this)">
+                <span class="listaDeQuizzes">
                     ${quizzUnico.title}
                 </span>
             </div>
             `
     }
 }
-
 receberQuizzes();
 
-function quizzIndividual () {
+// FUNÇÃO QUE LEVA PARA O QUIZZ CLICADO //
+function quizzIndividual (id) {
+    const listaQuizz = document.querySelector(".principal")
     const quizz = document.querySelector(".quizzIndividual")
-    quizz.classList.toggle("escondido")
+    listaQuizz.classList.add("escondido")
+    quizz.classList.remove("escondido")
+
+    receberQuizzUnico(id);
 }
 
 function comparador () {
     return Math.random() - 0.5;
 }
 
-function receberQuizzUnico () {
-    const quizz = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/1`)
+// FUNÇÃO QUE RENDERIZADO O QUIZZ CLICADO //
+function receberQuizzUnico (id) {
+    const quizz = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id.classList[1]}`)
 
     quizz.then((infoQuizz) => {
         const quizz = infoQuizz.data
@@ -77,5 +89,3 @@ function receberQuizzUnico () {
     } )
     quizz.catch(() => alert("ERRO2!"))
 }
-
-receberQuizzUnico();

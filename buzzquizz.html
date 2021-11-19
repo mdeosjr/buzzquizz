@@ -14,24 +14,28 @@
     <header class="tituloPagina">
         <h1>BuzzQuizz</h1>
     </header>
-    <main class="principal escondido">
-        <section class="seusQuizzes">
-            <div class="semQuizz">
-                Você não criou nenhum quizz ainda :(
+    <div class="container">
+        <main class="principal">
+            <section class="seusQuizzes">
+                <div class="semQuizz">
+                    Você não criou nenhum quizz ainda :(
+                </div>
+                <div class="criarQuizz">
+                    <span>
+                        Criar Quizz
+                    </span>
+                </div>
+            </section>
+            <span class="tituloTodosQuizzes">Todos os Quizzes</span>
+            <section class="todosOsQuizzes" data-identifier="general-quizzes"> 
+            </section>
+        </main>
+        <section class="quizzIndividual escondido">
+            <div class="banner">
             </div>
-            <div class="criarQuizz">
-                <span>
-                    Criar Quizz
-                </span>
-            </div>
+            <div class="perguntas">
+        </div>
         </section>
-        <span class="tituloTodosQuizzes">Todos os Quizzes</span>
-        <section class="todosOsQuizzes" data-identifier="general-quizzes"> 
-        </section>
-    </main>
-    <section class="banner">
-    </section>
-    <div class="perguntas">
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
