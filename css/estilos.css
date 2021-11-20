@@ -2,9 +2,12 @@
     box-sizing: border-box;
 }
 
-.container {
-    position: relative;
+body {
     background-color: #E5E5E5;
+}
+
+.telaQuizzes {
+    position: relative;
 }
 
 /* LISTAGEM DE QUIZZES */
@@ -71,6 +74,8 @@ h1 {
     width: 151px;
     height: 40px;
     margin: 0 auto;
+
+    cursor: pointer;
 }
 
 .criarQuizz span {
@@ -135,7 +140,6 @@ span.listaDeQuizzes {
     position: absolute;
     z-index: 1;
     width: 100%;
-    background-color: #E5E5E5;
 }
 
 .banner {
@@ -207,6 +211,7 @@ span.listaDeQuizzes {
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 18px;
+    gap: 30px;
 }
 
 .resposta img {
@@ -216,11 +221,14 @@ span.listaDeQuizzes {
 }
 
 .resposta {
+    width: 330px;
+    height: 175px;
     display: flex;
     flex-direction: column;
 
     justify-content: space-between;
     padding-bottom: 18px;
+    margin-top: 10px;
 
     cursor: pointer;
 }
@@ -230,6 +238,152 @@ span.listaDeQuizzes {
     line-height: 23px;
 
     color: #000000;
+}
+
+/* CRIAR QUIZZ */
+
+.criandoQuizz {
+    position: relative;
+}
+
+.infosBasicas, .perguntasDoQuizz {
+    width: 600px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    position: absolute;
+
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.infosBasicas {
+    z-index: 888;
+}
+
+h2 {
+    font: normal bold 23px Roboto;
+    line-height: 27px;
+
+    color: #000000;
+
+    padding-top: 140px;
+}
+
+.infosQuizz, .perguntaQuizz {
+    width: 600px;
+    height: 256px;
+    margin-top: 27px;
+    margin-bottom: 85px;
+    gap: 9px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    all: unset;
+
+    width: 564px;
+    height: 46px;
+
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font: normal 19px Roboto;
+
+    line-height: 22px;
+    padding-left: 20px;
+
+    color: #000000;
+}
+
+input:first-child {
+    margin-top: 21px;
+}
+
+input::placeholder {
+    font: normal italic 21px Roboto;
+
+    line-height: 22px;
+
+    color: #BABABA;
+}
+
+.botaoCriandoQuizz {
+    width: 369px;
+    height: 54px;
+    margin: 85px 0;
+
+    background: #EC362D;
+    border-radius: 15px;
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.textoBotao {
+    font: normal 21px Roboto;
+
+    line-height: 25px;
+   
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFF5F4;
+}
+
+.perguntaQuizz {
+    height: 825px;
+    margin-bottom: 24px;
+}
+
+h3 {
+    font: normal bold 20px Roboto;
+    line-height: 23px;
+
+    padding-top: 28px;
+
+    color: #000000;
+}
+
+.perguntaQuizzFechada {
+    width: 100%;
+    height: 74px;
+    margin-bottom: 12px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.perguntaQuizzFechada h3 {
+    padding-top: 0;
+}
+
+.criandoQuizz ion-icon {
+    font-size: 23px;
+}
+
+.incorreta2, .incorreta3 {
+    margin-top: 34px;
 }
 
 .escondido {
