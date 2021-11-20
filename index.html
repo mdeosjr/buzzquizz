@@ -14,8 +14,8 @@
     <header class="tituloPagina">
         <h1>BuzzQuizz</h1>
     </header>
-    <div class="telaQuizzes">
-        <main class="principal">
+    <main class="telaQuizzes">
+        <section class="principal">
             <section class="seusQuizzes">
                 <div class="semQuizz">
                     Você não criou nenhum quizz ainda :(
@@ -29,16 +29,16 @@
             <span class="tituloTodosQuizzes">Todos os Quizzes</span>
             <section class="todosOsQuizzes" data-identifier="general-quizzes"> 
             </section>
-        </main>
+        </section>
         <section class="quizzIndividual escondido">
             <div class="banner">
             </div>
             <div class="perguntas">
         </div>
         </section>
-    </div>
-    <div class="criandoQuizz escondido">
-        <div class="infosBasicas">
+    </main>
+    <main class="criandoQuizz escondido">
+        <section class="infosBasicas escondido">
             <h2>Comece pelo começo</h2>
             <div class="infosQuizz" name="infosBasicas">
                 <input type="text" placeholder="Título do seu quizz" class="titulo">
@@ -51,8 +51,8 @@
                     Prosseguir para criar perguntas
                 </span>
             </div>
-        </div>
-        <div class="perguntasDoQuizz escondido">
+        </section>
+        <section class="perguntasDoQuizz escondido">
             <h2>Crie suas perguntas</h2>
             <div class="perguntaQuizz">
                 <h3>Pergunta 1</h3>
@@ -78,8 +78,26 @@
                     Prosseguir para criar níveis
                 </span>
             </div>
-        </div>
-    </div>
+        </section>
+        <section class="niveisDoQuizz">
+            <h2>Agora, decida os níveis</h2>
+            <div class="nivelQuizz">
+                <input type="text" placeholder="Título do nível" class="tituloNivel" data-identifier="level">
+                <input type="text" placeholder="% de acerto mínima" class="pctAcerto" data-identifier="level">
+                <input type="text" placeholder="URL da imagem do nível" class="linkImagemNivel" data-identifier="level">
+                <input type="text" placeholder="Descrição do nível" class="descricaoNivel" data-identifier="level">
+            </div>
+            <div class="nivelQuizzFechado">
+                <h3>Nível 2</h3>
+                <ion-icon name="create-outline" data-identifier="expand"></ion-icon>
+            </div>
+            <div class="botaoCriandoQuizz" onclick="criarQuizz()">
+                <span class="textoBotao">
+                    Finalizar Quizz
+                </span>
+            </div>
+        </section>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script type="text/javascript" src="script.js"></script>

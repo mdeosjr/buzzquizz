@@ -246,7 +246,7 @@ span.listaDeQuizzes {
     position: relative;
 }
 
-.infosBasicas, .perguntasDoQuizz {
+.infosBasicas, .perguntasDoQuizz, .niveisDoQuizz {
     width: 600px;
     
     display: flex;
@@ -273,7 +273,7 @@ h2 {
     padding-top: 140px;
 }
 
-.infosQuizz, .perguntaQuizz {
+.infosQuizz, .perguntaQuizz, .nivelQuizz {
     width: 600px;
     height: 256px;
     margin-top: 27px;
@@ -360,7 +360,7 @@ h3 {
     color: #000000;
 }
 
-.perguntaQuizzFechada {
+.perguntaQuizzFechada, .nivelQuizzFechado {
     width: 100%;
     height: 74px;
     margin-bottom: 12px;
@@ -374,7 +374,7 @@ h3 {
     padding: 0 20px;
 }
 
-.perguntaQuizzFechada h3 {
+.perguntaQuizzFechada h3, .nivelQuizzFechado h3 {
     padding-top: 0;
 }
 
