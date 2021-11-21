@@ -111,7 +111,7 @@ span.listaDeQuizzes {
     gap: 10px;
 }
 
-.quizz {
+.quizz, .imagemQuizz {
     width: 340px;
     height: 181px;
     border-radius: 5px;
@@ -361,7 +361,7 @@ h3 {
 }
 
 .perguntaQuizzFechada, .nivelQuizzFechado {
-    width: 100%;
+    width: 600px;
     height: 74px;
     margin-bottom: 12px;
 
@@ -384,6 +384,28 @@ h3 {
 
 .incorreta2, .incorreta3 {
     margin-top: 34px;
+}
+
+.quizzCriado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagemQuizz {
+    width: 500px;
+    height: 266px;
+    margin-top: 46px;
+    padding: 17px;
+}
+
+span.voltarHome {
+    font: normal 21px Roboto;
+    
+    line-height: 25px;
+    
+    color: #818181;
 }
 
 .escondido {

@@ -38,7 +38,7 @@
         </section>
     </main>
     <main class="criandoQuizz escondido">
-        <section class="infosBasicas escondido">
+        <section class="infosBasicas">
             <h2>Comece pelo começo</h2>
             <div class="infosQuizz" name="infosBasicas">
                 <input type="text" placeholder="Título do seu quizz" class="titulo">
@@ -53,49 +53,20 @@
             </div>
         </section>
         <section class="perguntasDoQuizz escondido">
-            <h2>Crie suas perguntas</h2>
-            <div class="perguntaQuizz">
-                <h3>Pergunta 1</h3>
-                <input type="text" placeholder="Texto da pergunta" class="textoPergunta" data-identifier="question">
-                <input type="text" placeholder="Cor de fundo da pergunta" class="corPergunta" data-identifier="question">
-                <h3>Resposta correta</h3>
-                <input type="text" placeholder="Resposta correta" class="textoRespostaCorreta" data-identifier="question">
-                <input type="text" placeholder="URL da imagem" class="linkImagemRespostaC" data-identifier="question">
-                <h3>Respostas incorretas</h3>
-                <input type="text" placeholder="Resposta incorreta 1" class="incorreta1" data-identifier="question">
-                <input type="text" placeholder="URL da imagem 1" class="linkImagemRespostaI1" data-identifier="question">
-                <input type="text" placeholder="Resposta incorreta 2" class="incorreta2" data-identifier="question">
-                <input type="text" placeholder="URL da imagem 2" class="linkImagemRespostaI2" data-identifier="question">
-                <input type="text" placeholder="Resposta incorreta 3" class="incorreta3" data-identifier="question">
-                <input type="text" placeholder="URL da imagem 3" class="linkImagemRespostaI3" data-identifier="question">
-            </div>
-            <div class="perguntaQuizzFechada">
-                <h3>Pergunta 2</h3>
-                <ion-icon name="create-outline" data-identifier="expand"></ion-icon>
-            </div>
-            <div class="botaoCriandoQuizz" onclick="validarPerguntaQuizz()">
-                <span class="textoBotao">
-                    Prosseguir para criar níveis
-                </span>
-            </div>
         </section>
-        <section class="niveisDoQuizz">
-            <h2>Agora, decida os níveis</h2>
-            <div class="nivelQuizz">
-                <input type="text" placeholder="Título do nível" class="tituloNivel" data-identifier="level">
-                <input type="text" placeholder="% de acerto mínima" class="pctAcerto" data-identifier="level">
-                <input type="text" placeholder="URL da imagem do nível" class="linkImagemNivel" data-identifier="level">
-                <input type="text" placeholder="Descrição do nível" class="descricaoNivel" data-identifier="level">
-            </div>
-            <div class="nivelQuizzFechado">
-                <h3>Nível 2</h3>
-                <ion-icon name="create-outline" data-identifier="expand"></ion-icon>
-            </div>
-            <div class="botaoCriandoQuizz" onclick="criarQuizz()">
+        <section class="niveisDoQuizz escondido">
+        </section>
+        <section class="quizzCriado escondido">
+            <h2>Seu quizz está pronto!</h2>
+            <div class="imagemQuizz"></div>
+            <div class="botaoCriandoQuizz" onclick="">
                 <span class="textoBotao">
-                    Finalizar Quizz
+                    Acessar Quizz
                 </span>
             </div>
+            <span class="voltarHome" onclick="">
+                Voltar pra home
+            </span>
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
