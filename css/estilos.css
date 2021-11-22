@@ -467,3 +467,51 @@ span.voltarHome {
         width: 100%;
     }
 }
+
+.finalizacao {
+    width: 759px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 50px;
+}
+
+.finalizacao div{
+    justify-content: center;
+    display: flex;
+}
+
+.finalizahead{
+    margin: 14px;
+    height: 100px;
+    background-color: #EC362D;
+    font: normal bold 20px Roboto;
+    line-height: 23px;
+    color: white;
+}
+
+.finalizacao img{
+    width: 364px;
+    height: 273px;
+    object-fit: fill;
+}
+
+.descricao{
+    width: 364px;
+    height: 273px;
+    font: bold 20px Roboto;
+    color: #484848;
+    line-height: 25px;
+}
+
+.finalizabotao{
+    width: 260.38px;
+    height: 52px;
+    margin-top: 10px;
+    border-radius: 15px;
+    font: normal 20px Roboto;
+    background-color: green;
+    align-self: center;
+}
