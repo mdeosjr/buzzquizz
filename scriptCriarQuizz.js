@@ -12,6 +12,14 @@ let tituloNivel;
 let pctAcerto;
 let linkImagemNivel;
 let descricaoNivel;
+let questoesUsuario;
+let niveisUsuario;
+let quizzUsuario = {
+    title: tituloQuizz,
+    image: linkBannerQuizz,
+    questions: questoesUsuario,
+    levels: niveisUsuario
+}
 
 function telaDeCriarQuizz () {
     const listaQuizzes = document.querySelector(".telaQuizzes")
@@ -24,7 +32,7 @@ function validarInfosBasicas () {
     tituloQuizz = document.querySelector(".titulo").value;
     qtePerguntas = document.querySelector(".qtePerguntas").value;
     qteNiveis = document.querySelector(".qteNiveis").value;
-    linkBannerQuizz = document.querySelector(".linkImagem").value;
+    linkBannerQuizz = document.querySelector(".linkBannerQuizz").value;
     let validado = document.querySelector(".infosBasicas")
     let validado2 = document.querySelector(".perguntasDoQuizz")
     
@@ -36,7 +44,7 @@ function validarInfosBasicas () {
         alert("Mínimo de 3 perguntas")
     } else if (qteNiveis < 2 || qteNiveis === "") {
         alert("Mínimo de 2 níveis")
-    } 
+    } else validado.classList.add("escondido"), validado2.classList.remove("escondido");
 
     validado2.innerHTML = 
     `<h2>Crie suas perguntas</h2>
@@ -88,7 +96,12 @@ function validarInfosBasicas () {
         <ion-icon class="botaoExpandir" name="create-outline" data-identifier="expand" onclick="expandir(this)"></ion-icon>        
         </div>`
     }
-    validado.classList.add("escondido"), validado2.classList.remove("escondido");
+
+    // DAR PUSH NO ARRAY QUESTOES USUARIO //
+
+    // for (let i = 0; i < qtePerguntas; i++) {
+    //     questoesUsuario = 
+    // }
 }
 
 function validarPerguntaQuizz () {
@@ -110,7 +123,7 @@ function validarPerguntaQuizz () {
         alert("Inserir ao menos uma resposta correta e uma resposta incorreta (com links das imagens)")
     } else if (isValidUrl(imagemRespostaCorreta) === false || imagemRespostaCorreta === "" || isValidUrl(imagemRespostaIncorreta) === false || imagemRespostaIncorreta === "") {
         alert("URL inválida")
-    } 
+    } else validado.classList.add("escondido"), validado2.classList.remove("escondido");
 
     validado2.innerHTML = 
     `<h2>Agora, decida os níveis</h2>
@@ -146,7 +159,6 @@ function validarPerguntaQuizz () {
         <ion-icon class="botaoExpandir" name="create-outline" data-identifier="expand" onclick="expandir(this)"></ion-icon>
         </div>`
     }
-    validado.classList.add("escondido"), validado2.classList.remove("escondido");
 }
 
 function criarQuizz () {
@@ -189,6 +201,10 @@ function expandir (botao) {
     divBotao.removeChild(tituloARemover)
 }
 
+function voltarHome () {
+    document.location.reload(true)
+}
+
 function isValidUrl(string) {
     try {
       new URL(string);
@@ -197,3 +213,72 @@ function isValidUrl(string) {
     }
     return true;
 }
+
+// ENVIO DO QUIZ //
+
+// axios.post = ("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes, quizzUsuario")
+// questoesUsuario = [
+//     {
+//         title: textoPergunta-1,
+//         color: "#123456",
+//         answers: [
+//             {
+//                 text: "Texto da resposta 1",
+//                 image: "https://http.cat/411.jpg",
+//                 isCorrectAnswer: true
+//             },
+//             {
+//                 text: "Texto da resposta 2",
+//                 image: "https://http.cat/412.jpg",
+//                 isCorrectAnswer: false
+//             }
+//         ]
+//     },
+//     {
+//         title: "Título da pergunta 2",
+//         color: "#123456",
+//         answers: [
+//             {
+//                 text: "Texto da resposta 1",
+//                 image: "https://http.cat/411.jpg",
+//                 isCorrectAnswer: true
+//             },
+//             {
+//                 text: "Texto da resposta 2",
+//                 image: "https://http.cat/412.jpg",
+//                 isCorrectAnswer: false
+//             }
+//         ]
+//     },
+//     {
+//         title: "Título da pergunta 3",
+//         color: "#123456",
+//         answers: [
+//             {
+//                 text: "Texto da resposta 1",
+//                 image: "https://http.cat/411.jpg",
+//                 isCorrectAnswer: true
+//             },
+//             {
+//                 text: "Texto da resposta 2",
+//                 image: "https://http.cat/412.jpg",
+//                 isCorrectAnswer: false
+//             }
+//         ]
+//     }
+// ]
+
+// niveisUsuario = [
+//     {
+//         title: "Título do nível 1",
+//         image: "https://http.cat/411.jpg",
+//         text: "Descrição do nível 1",
+//         minValue: 0
+//     },
+//     {
+//         title: "Título do nível 2",
+//         image: "https://http.cat/412.jpg",
+//         text: "Descrição do nível 2",
+//         minValue: 50
+//     }
+// ]

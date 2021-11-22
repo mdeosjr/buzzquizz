@@ -411,10 +411,10 @@ h3, .tituloARemover {
 
 span.voltarHome {
     font: normal 21px Roboto;
-    
     line-height: 25px;
-    
     color: #818181;
+
+    cursor: pointer;
 }
 
 .escondido {
