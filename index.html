@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>BuzzQuizz</title>
+</head>
+<body>
+    <header class="tituloPagina">
+        <h1>BuzzQuizz</h1>
+    </header>
+    <main class="telaQuizzes">
+        <section class="principal">
+            <section class="seusQuizzes">
+                <div class="semQuizz">
+                    Você não criou nenhum quizz ainda :(
+                </div>
+                <div class="criarQuizz" data-identifier="create-quizz" onclick="telaDeCriarQuizz()">
+                    <span>
+                        Criar Quizz
+                    </span>
+                </div>
+            </section>
+            <span class="tituloTodosQuizzes">Todos os Quizzes</span>
+            <section class="todosOsQuizzes" data-identifier="general-quizzes"> 
+            </section>
+        </section>
+        <section class="quizzIndividual escondido">
+            <div class="banner">
+            </div>
+            <div class="perguntas">
+        </div>
+        </section>
+    </main>
+    <main class="criandoQuizz escondido">
+        <section class="infosBasicas">
+            <h2>Comece pelo começo</h2>
+            <div class="infosQuizz" name="infosBasicas">
+                <input type="text" placeholder="Título do seu quizz" class="titulo">
+                <input type="text" placeholder="URL da imagem do seu quizz" class="linkImagem">
+                <input type="text" placeholder="Quantidade de perguntas do quizz" class="qtePerguntas">
+                <input type="text" placeholder="Quantidade de níveis do quizz" class="qteNiveis">
+            </div>
+            <div class="botaoCriandoQuizz" onclick="validarInfosBasicas()">
+                <span class="textoBotao">
+                    Prosseguir para criar perguntas
+                </span>
+            </div>
+        </section>
+        <section class="perguntasDoQuizz escondido">
+        </section>
+        <section class="niveisDoQuizz escondido">
+        </section>
+        <section class="quizzCriado escondido">
+            <h2>Seu quizz está pronto!</h2>
+            <div class="imagemQuizz"></div>
+            <div class="botaoCriandoQuizz" onclick="">
+                <span class="textoBotao">
+                    Acessar Quizz
+                </span>
+            </div>
+            <span class="voltarHome" onclick="">
+                Voltar pra home
+            </span>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="scriptCriarQuizz.js"></script>
+</body>
+</html>
