@@ -269,6 +269,7 @@ function enviaQuizz()
     function tratarSucesso(quizz)
     {
         localStorage.quizz;
+        location.reload();
         quizzIndividual(quizz);
     }
 
