@@ -96,34 +96,53 @@ function validarInfosBasicas () {
         <ion-icon class="botaoExpandir" name="create-outline" data-identifier="expand" onclick="expandir(this)"></ion-icon>        
         </div>`
     }
-
-    // DAR PUSH NO ARRAY QUESTOES USUARIO //
-
-    // for (let i = 0; i < qtePerguntas; i++) {
-    //     questoesUsuario = 
-    // }
 }
 
 function validarPerguntaQuizz () {
-    textoPergunta = document.querySelector(".textoPergunta-1").value;
-    corPergunta = document.querySelector(".corPergunta-1").value;
-    textoRespostaCorreta = document.querySelector(".textoRespostaCorreta-1").value;
-    textoRespostaIncorreta = document.querySelector(".incorreta1-1").value;
-    imagemRespostaCorreta = document.querySelector(".linkImagemRespostaC-1").value;
-    imagemRespostaIncorreta = document.querySelector(".linkImagemRespostaI1-1").value;
-    let corCorreta = /^#[0-9A-F]{6}$/i.test(corPergunta)
-    let validado = document.querySelector(".perguntasDoQuizz")
-    let validado2 = document.querySelector(".niveisDoQuizz")
-    
-    if (textoPergunta === '' || textoPergunta.length < 20) {
-        alert("Texto da pergunta deve conter no mínimo 20 caracteres")
-    } else if (corCorreta === false) {
-        alert(`Insira uma cor no formato hexadecimal (começar em "#", seguida de 6 caracteres hexadecimais, ou seja, números ou letras de A a F)`)
-    } else if (textoRespostaCorreta === "" || textoRespostaIncorreta === "" || imagemRespostaIncorreta === "") {
-        alert("Inserir ao menos uma resposta correta e uma resposta incorreta (com links das imagens)")
-    } else if (isValidUrl(imagemRespostaCorreta) === false || imagemRespostaCorreta === "" || isValidUrl(imagemRespostaIncorreta) === false || imagemRespostaIncorreta === "") {
-        alert("URL inválida")
-    } else validado.classList.add("escondido"), validado2.classList.remove("escondido");
+        textoPergunta = document.querySelector(".textoPergunta-1").value;
+        corPergunta = document.querySelector(".corPergunta-1").value;
+        textoRespostaCorreta = document.querySelector(".textoRespostaCorreta-1").value;
+        textoRespostaIncorreta = document.querySelector(".incorreta1-1").value;
+        imagemRespostaCorreta = document.querySelector(".linkImagemRespostaC-1").value;
+        imagemRespostaIncorreta = document.querySelector(".linkImagemRespostaI1-1").value;
+        let corCorreta = /^#[0-9A-F]{6}$/i.test(corPergunta)
+        let validado = document.querySelector(".perguntasDoQuizz")
+        let validado2 = document.querySelector(".niveisDoQuizz")
+        let validacao1; let validacao2;
+
+        if (textoPergunta === '' || textoPergunta.length < 20) {
+            alert("Texto da pergunta deve conter no mínimo 20 caracteres")
+        } else if (corCorreta === false) {
+            alert(`Insira uma cor no formato hexadecimal (começar em "#", seguida de 6 caracteres hexadecimais, ou seja, números ou letras de A a F)`)
+        } else if (textoRespostaCorreta === "" || textoRespostaIncorreta === "" || imagemRespostaIncorreta === "") {
+            alert("Inserir ao menos uma resposta correta e uma resposta incorreta (com links das imagens)")
+        } else if (isValidUrl(imagemRespostaCorreta) === false || imagemRespostaCorreta === "" || isValidUrl(imagemRespostaIncorreta) === false || imagemRespostaIncorreta === "") {
+            alert("URL inválida")
+        } else validacao1 = true
+
+        for (let i = 1; i < qtePerguntas; i++) {
+            let textoPerguntaI = document.querySelector(`.textoPergunta-${i+1}`).value;
+            let corPerguntaI = document.querySelector(`.corPergunta-${i+1}`).value;
+            let corCorretaI = /^#[0-9A-F]{6}$/i.test(corPerguntaI)
+            let textoRespostaCorretaI = document.querySelector(`.textoRespostaCorreta-${i+1}`).value;
+            let textoRespostaIncorretaI = document.querySelector(`.incorreta1-${i+1}`).value;
+            let imagemRespostaCorretaI = document.querySelector(`.linkImagemRespostaC-${i+1}`).value;
+            let imagemRespostaIncorretaI = document.querySelector(`.linkImagemRespostaI1-${i+1}`).value;
+
+            if (textoPerguntaI === '' || textoPerguntaI.length < 20) {
+                alert("Texto da pergunta deve conter no mínimo 20 caracteres")
+            } else if (corCorretaI === false) {
+                alert(`Insira uma cor no formato hexadecimal (começar em "#", seguida de 6 caracteres hexadecimais, ou seja, números ou letras de A a F)`)
+            } else if (textoRespostaCorretaI === "" || textoRespostaIncorretaI === "" || imagemRespostaIncorretaI === "") {
+                alert("Inserir ao menos uma resposta correta e uma resposta incorreta (com links das imagens)")
+            } else if (isValidUrl(imagemRespostaCorretaI) === false || imagemRespostaCorretaI === "" || isValidUrl(imagemRespostaIncorretaI) === false || imagemRespostaIncorretaI === "") {
+                alert("URL inválida")
+            } else validacao2 = true
+        }
+
+        if (validacao1 && validacao2) {
+            validado.classList.add("escondido"), validado2.classList.remove("escondido"); 
+        }
 
     validado2.innerHTML = 
     `<h2>Agora, decida os níveis</h2>
@@ -167,7 +186,9 @@ function criarQuizz () {
     linkImagemNivel = document.querySelector(".linkImagemNivel-1").value;
     descricaoNivel = document.querySelector(".descricaoNivel-1").value;
     let validado = document.querySelector(".niveisDoQuizz");
-    let validado2 = document.querySelector(".quizzCriado")
+    let validado2 = document.querySelector(".quizzCriado");
+    let validacao1; let validacao2;
+
     
     if (tituloNivel.length < 10 || tituloNivel === '') {
         alert("Texto da pergunta deve conter no mínimo 10 caracteres")
@@ -177,7 +198,27 @@ function criarQuizz () {
         alert("URL inválida") 
     } else if (descricaoNivel.length < 30) {
         alert("Texto da descrição deve conter no mínimo 30 caracteres")
-    } else validado.classList.add("escondido"), validado2.classList.remove("escondido");
+    } else validacao1 = true;
+
+    for (let i = 1; i < qteNiveis; i++) {
+        let tituloNivelI = document.querySelector(`.tituloNivel-${i+1}`).value;
+        let pctAcertoI = document.querySelector(`.pctAcerto-${i+1}`).value;
+        let linkImagemNivelI = document.querySelector(`.linkImagemNivel-${i+1}`).value;
+        let descricaoNivelI = document.querySelector(`.descricaoNivel-${i+1}`).value;
+        if (tituloNivelI.length < 10 || tituloNivelI === '') {
+            alert("Texto da pergunta deve conter no mínimo 10 caracteres")
+        } else if (pctAcertoI < 0 && pctAcertoI > 100 || pctAcertoI === "") {
+            alert("Porcentagem de acerto mínima entre 0% e 100%") 
+        } else if (isValidUrl(linkImagemNivelI) === false || linkImagemNivelI === "") {
+            alert("URL inválida") 
+        } else if (descricaoNivelI.length < 30) {
+            alert("Texto da descrição deve conter no mínimo 30 caracteres")
+        } else validacao2 = true
+    }
+
+    if (validacao1 && validacao2) { 
+        validado.classList.add("escondido"), validado2.classList.remove("escondido");
+    }
 
     let imagemQuizz = document.querySelector(".imagemQuizz")
     imagemQuizz.innerHTML = ` 
