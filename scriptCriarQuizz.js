@@ -255,9 +255,23 @@ function isValidUrl(string) {
     return true;
 }
 
-function testaQuizz()
+function enviaQuizz()
 {
-    console.log(quizzUsuario);
+    const requisicao = axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', quizzUsuario);
+    requisicao.then(tratarSucesso);
+    requisicao.catch(tratarError);
+
+    function tratarSucesso(quizz)
+    {
+        localStorage.quizz;
+        quizzIndividual(quizz);
+    }
+
+    function tratarError()
+    {
+        alert("Envio do quizz falhou :/");
+        location.reload();
+    }
 }
 
 // ENVIO DO QUIZ //

@@ -149,13 +149,13 @@ function clicarresposta(respQuizz)
 
     let next = parseInt(divRespostasAtuais.id) + 1;
 
-    if (quizzesRespondidos != elements.length)
+    if (quizzesRespondidos < elements.length)
     {
         setTimeout(() => {document.getElementById(`${next}`).scrollIntoView({block: "center"})}, 2000);
     }
     
 
-    else
+    if(quizzesRespondidos >= elements.length || document.getElementById(`${next}`) == null)
     {
         let pontuacao = Math.ceil( (respostasCertas / (elements.length))*100);
         let cont;
