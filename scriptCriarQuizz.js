@@ -257,6 +257,11 @@ function isValidUrl(string) {
 
 function enviaQuizz()
 {
+    quizzUsuario.title = tituloQuizz;
+    quizzUsuario.image = linkBannerQuizz;
+    quizzUsuario.questions = questoesUsuario;
+    quizzUsuario.levels =  niveisUsuario;
+
     const requisicao = axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', quizzUsuario);
     requisicao.then(tratarSucesso);
     requisicao.catch(tratarError);
