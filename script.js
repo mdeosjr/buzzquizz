@@ -180,14 +180,11 @@ function clicarresposta(respQuizz)
                 <div class="finalizahead" style="padding: 40px;">
                     ${niveis[cont].title}
                 </div>
-                <div style="display: flex; flex: wrap;">
-
-                    
+                <div class="corpoFinalizacao" style="display: flex; flex: wrap;">
                     <img src=${niveis[cont].image}></img>
                     <div class="descricao">
                         <p style="width: 100%; word-wrap: break-word;">${niveis[cont].text}</p>
                     </div>
-
                 </div>
                 
                 <div class="finalizabotao" onclick="reiniciaQuizz()" style="background-color: #EC362D; color: white;"><p style="margin-top: 12px;">Reiniciar Quizz</p></div>
