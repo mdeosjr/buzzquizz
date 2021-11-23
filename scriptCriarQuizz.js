@@ -214,6 +214,11 @@ function isValidUrl(string) {
     return true;
 }
 
+function testaQuizz()
+{
+    console.log(quizzUsuario);
+}
+
 // ENVIO DO QUIZ //
 
 // axios.post = ("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes, quizzUsuario")

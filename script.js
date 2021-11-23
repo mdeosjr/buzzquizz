@@ -120,7 +120,6 @@ function clicarresposta(respQuizz)
     if (respQuizz.querySelector('img').src == respostaCerta.image && respQuizz.querySelector('span').textContent == respostaCerta.text)
     {
         respostasCertas = respostasCertas + 1;
-        console.log(respostasCertas);
     }
   
     
@@ -151,7 +150,10 @@ function clicarresposta(respQuizz)
     let next = parseInt(divRespostasAtuais.id) + 1;
 
     if (quizzesRespondidos != elements.length)
-    setTimeout(() => {document.getElementById(`${next}`).scrollIntoView({block: "center"})}, 2000);
+    {
+        setTimeout(() => {document.getElementById(`${next}`).scrollIntoView({block: "center"})}, 2000);
+    }
+    
 
     else
     {
@@ -237,5 +239,7 @@ function voltarHome(){
 
     const final = document.querySelector(".finalizacao");
     final.innerHTML =``;
+
+    
 
 }
