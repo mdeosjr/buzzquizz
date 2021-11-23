@@ -120,7 +120,6 @@ function clicarresposta(respQuizz)
     if (respQuizz.querySelector('img').src == respostaCerta.image && respQuizz.querySelector('span').textContent == respostaCerta.text)
     {
         respostasCertas = respostasCertas + 1;
-        console.log(respostasCertas);
     }
   
     
@@ -174,11 +173,10 @@ function clicarresposta(respQuizz)
         }
 
         const final = document.querySelector(".finalizacao");
-
         final.innerHTML = 
                 `
                 <div class="finalizahead" style="padding: 40px;">
-                    ${niveis[cont].title}
+                   ${pontuacao}% de acerto: ${niveis[cont].title}
                 </div>
                 <div class="corpoFinalizacao" style="display: flex; flex: wrap;">
                     <img src=${niveis[cont].image}></img>
@@ -192,7 +190,6 @@ function clicarresposta(respQuizz)
                 `;
 
                 setTimeout(() => {document.getElementById("caixafinal").scrollIntoView({block: "center"})}, 2000);
-        
     }
 
 }
